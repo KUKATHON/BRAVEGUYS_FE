@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import Titletoggle from './Titletoggle'
 import styled from 'styled-components';
 import { categoryState } from '../assets/atom';
 
@@ -27,28 +26,51 @@ function Mypost() {
     #mypost-info{
         display: flex;
         justify-content: space-between; 
+        padding: 16px 20px;
+        font-size: 16px;
+    }
+
+    #mypost-filter{
+        font-size: 14px;
+        display: flex;
+        gap: 8px;
     }
 
     #mypost-img{
         display: flex;
         flex-wrap: wrap;
         gap: 1px;
+        padding: 0 20px;
     }
 
     #imgitem{
-        background-color: black;
+        background-color: #e2cece;
         flex-basis: calc((100% - 2px) / 3 );
         aspect-ratio: 1/1;
         box-sizing: border-box;
     }
-  `
-  const showDropDown = ()=>{
 
-  }
+    #navbar-category{
+        display: flex;
+        gap: 8px;
+        white-space: nowrap;
+        color: var(--gray-500);
+        overflow-x: scroll;
+        scrollbar-width: none;
+    }
 
-  const hideDropDown = ()=>{
-    setSelectedPostFilter(unselectedPostFilter);
-  }
+    #navbar-category::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+
+    #navbar-category > button{
+        border: none;
+        border-radius: 8px;
+        padding: 8px;
+        background: white;
+    }
+`
 
   return (
     <div>
@@ -57,9 +79,10 @@ function Mypost() {
             
             <div id="mypost-info">
                 <div>오늘의 인증횟수 {myPost.length}회</div>
-                <div onClick={()=>showDropDown()}>
-                    <div>{selectedPostFilter}🔽</div>
-                    <div onClick={()=>hideDropDown()}> {unselectedPostFilter}</div>
+                <div id="mypost-filter">
+                    {postFilter.map((item, idx)=>(
+                        <div id="mypost-select" onClick={()=>setSelectedPostFilter(item)} style={item==selectedPostFilter?{"color":"black"}:{"color":"var(--gray-400)"}}>{item}</div>
+                    ))}
                 </div>
             </div>
             <div id="mypost-img">
@@ -72,7 +95,7 @@ function Mypost() {
                 <>
                 <div id="navbar-category">
                 {category.map((item, idx)=>(
-                    <button key={idx} onClick={()=>setSelectedCategory(item)} style={selectedCategory===item?{"color":"blue", "borderBottom":"1px solid black"}:{color:"black"}}>{item}</button>
+                    <button key={idx} onClick={()=>setSelectedCategory(item)} style={selectedCategory===item?{"color":"var(--blue-600)", "background":"var(--blue-200)"}:{"color":"var(--gray-500)", "border":"1px solid var(--gray-100)"}}>{item}</button>
                 ))}
                 </div>
                 {myPost.map((item, idx)=>(
@@ -86,7 +109,6 @@ function Mypost() {
             </div>
         </div>
         </MypostItem>
-        <Titletoggle></Titletoggle>
     </div>
   )
 }
