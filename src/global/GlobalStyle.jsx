@@ -4,13 +4,23 @@ import React from 'react';
 const GlobalStyle = createGlobalStyle`
   body {
     width: 375px;
-    height: 768px;
+    height: 812px;
     margin: 0;
     font-family: Pretendard;
   }
+  .register-login-text {
+
+  }
+  .register-login-input {
+    width: 335px;
+    height: 48px;
+    background: #f4f5f6;
+    border-radius: 4px;
+    border: none;
+  }
   .register-login-button {
-    width: 277px;
-    height: 50px;
+    width: 335px;
+    height: 60px;
   }
 `;
 

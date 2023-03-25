@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import emailState from '../../states/emailState';
-import passwordState from '../../states/passwordState';
-import nicknameState from '../../states/nicknameState';
-import { useRecoilState, useRecoilValue } from 'recoil';
+
 
 const RegisterContainer = styled.div`
   position: relative;
 
-  #register-text {
+  input::placeholder {
+    color: #aaabb5;
+  }
+
+  #register-title-text {
     width: 65px;
     height: 23px;
     top: 12.5px;
@@ -18,9 +19,27 @@ const RegisterContainer = styled.div`
   }
 
   #welcome-text {
-    width: 297px;
+    width: 310px;
     height: 35px;
+    position: absolute;
+    top: 63px;
+    left: 10px;
     font-size: 24px;
+  }
+
+  #register-first {
+    width: 350px;
+    height: 250px;
+    position: absolute;
+    top: 100px;
+    margin: 0 auto;
+  }
+
+  #register-second {
+    width: 350px;
+    height: 400px;
+    position: absolute;
+    top: 100px;
   }
 
   .register-input {
@@ -32,11 +51,26 @@ const RegisterContainer = styled.div`
   }
 `
 
+const RegisterForm = styled.div`
+  width: 350px;
+  height: 300px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+`
+
+const RegisterElement = styled.div`
+  width: 335px;
+  height: 76px;
+  margin: 15px 0;
+`;
+
 function Register() {
-  const [email, setEmail] = useRecoilState(emailState);
-  const [pwd, setPwd] = useRecoilState(passwordState);
+  const [email, setEmail] = useState('');
+  const [pwd, setPwd] = useState('');
   const [pwdConfirm, setPwdConfirm] = useState('');
-  const [nickname, setNickname] = useRecoilState(nicknameState);
+  const [nickname, setNickname] = useState('');
   const [nextClick, setNextClick] = useState(false);
   
   const handleClick = () => {
@@ -45,26 +79,36 @@ function Register() {
 
   return(
     <RegisterContainer>
-        <div id='register-text'>회원가입</div>
+        <div id='register-title-text'>회원가입</div>
         <div id='welcome-text'>세이브어스에 오신 것을 환영해요</div>
-        { !nextClick && 
-          <div id='register-first' >
-            <div>이메일</div>
-            <input type="text" className='register-input' placeholder='asdd232@gmail.com' onChange={(e) => { setEmail(e.target.value) }}/>
-            <div>비밀번호</div>
-            <input type="password" className='register-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setPwd(e.target.value) }}/>
-            <div>비밀번호 확인</div>
-            <input type="password" className='register-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setPwdConfirm(e.target.value) }}/>
-            <button onClick={handleClick} className='register-login-button' >다음으로</button>
-          </div>
-        }
-        { nextClick &&
-          <div id='register-second' >
-            <div>이메일</div>
-            <input type="text" className='register-input' placeholder='닉네임을 입력해주세요' onChange={(e) => { setNickname(e.target.value) }}/>
-            <input type='submit' value='가입하기' className='register-login-button' />
-          </div>
-        }
+        <RegisterForm>
+          { !nextClick && 
+            <div id='register-first'>
+              <RegisterElement>
+                <div className='register-login-text'>아이디</div>
+                <input type="text" className='register-login-input' placeholder='asdd232@gmail.com' onChange={(e) => { setEmail(e.target.value) }}/>
+              </RegisterElement>
+              <RegisterElement>
+                <div className='register-login-text'>비밀번호</div>
+                <input type="password" className='register-login-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setPwd(e.target.value) }}/>
+              </RegisterElement>
+              <RegisterElement>
+                <div className='register-login-text'>비밀번호 확인</div>
+                <input type="password" className='register-login-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setPwdConfirm(e.target.value) }}/>
+              </RegisterElement>
+              <button onClick={handleClick} className='register-login-button' >다음으로</button>
+            </div>
+          }
+          { nextClick &&
+            <div id='register-second'>
+              <RegisterElement>
+                <div className='register-login-text'>닉네임</div>
+                <input type="text" className='register-login-input' placeholder='닉네임을 입력해주세요' onChange={(e) => { setNickname(e.target.value) }}/>
+              </RegisterElement>
+              <input type='submit' value='가입하기' className='register-login-button' />
+            </div>
+          }
+        </RegisterForm>
     </RegisterContainer>
   )
 }
