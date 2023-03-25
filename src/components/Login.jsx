@@ -16,7 +16,7 @@ function Login() {
         <div>Log in</div>
         <input type="text" placeholder="이메일"/>
         <input type="password" placeholder="비밀번호"/>
-        <input type="submit" />
+        <input type="submit" className='register-login-button'/>
       </LoginForm>
     </LoginContainer>
   )
