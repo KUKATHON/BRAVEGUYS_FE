@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import emailState from '../states/emailState';
-import passwordState from '../states/passwordState';
-import nicknameState from '../states/nicknameState';
+import { emailState, passwordState, nicknameState } from '../assets/atom';
 import { useRecoilState } from 'recoil';
 import { useNavigate } from 'react-router-dom';
 
