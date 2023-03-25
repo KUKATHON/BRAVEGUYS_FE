@@ -29,3 +29,13 @@ export const menuState = atom({
   key: 'selectedMenu',
   default: "북극곰",
 })
+
+export const topBar = atom({
+  key: 'topBar',
+  default: '#fff',
+})
+
+export const missionScore = atom({
+  key: 'missionScore',
+  default: 0
+})
