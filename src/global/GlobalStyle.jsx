@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: Pretendard;
   }
-  .register-login-input {
+  .common-input {
     width: 335px;
     height: 48px;
     background: #f4f5f6;

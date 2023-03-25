@@ -93,15 +93,15 @@ function Register() {
             <div id='register-first'>
               <RegisterElement>
                 <div className='register-login-text'>아이디</div>
-                <input type="text" className='register-login-input' placeholder='asdd232@gmail.com' onChange={(e) => { setEmail(e.target.value) }}/>
+                <input type="text" className='common-input' placeholder='asdd232@gmail.com' onChange={(e) => { setEmail(e.target.value) }}/>
               </RegisterElement>
               <RegisterElement>
                 <div className='register-login-text'>비밀번호</div>
-                <input type="password" className='register-login-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setPwd(e.target.value) }}/>
+                <input type="password" className='common-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setPwd(e.target.value) }}/>
               </RegisterElement>
               <RegisterElement>
                 <div className='register-login-text'>비밀번호 확인</div>
-                <input type="password" className='register-login-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setPwdConfirm(e.target.value) }}/>
+                <input type="password" className='common-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setPwdConfirm(e.target.value) }}/>
               </RegisterElement>
               <button onClick={handleClick} id='register-next-button' className='common-button' >다음으로</button>
             </div>
