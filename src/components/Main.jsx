@@ -256,6 +256,16 @@ function Main() {
     setTopbarColor('#8ac3f3');
   }
 
+  const checkClick = () => {
+    setTopbarColor('#fff');
+    navigate('/upload');
+  }
+
+  const communityClick = () => {
+    setTopbarColor('#fff');
+    navigate('/community');
+  }
+
   return (
     <MainContainer>
       { (!leaveClick && testNum < 10) &&
@@ -300,7 +310,7 @@ function Main() {
       <div id="bottom-bar">
         <div className="bottom-element">
           <img src={addIcon} alt="add-icon" className="bottom-image" />
-          <div className="bottom-text">인증</div>
+          <div className="bottom-text" onClick={checkClick}>인증</div>
         </div>
         <div className="bottom-element">
           <img src={petIcon} alt="pet-icon" className="bottom-image" />
@@ -308,7 +318,7 @@ function Main() {
         </div>
         <div className="bottom-element">
           <img src={likeIcon} alt="like-icon" className="bottom-image" />
-          <div className="bottom-text">커뮤니티</div>
+          <div className="bottom-text" onClick={communityClick}>커뮤니티</div>
         </div>
         <div className="bottom-element">
           <img src={shopIcon} alt="shop-icon" className="bottom-image" />
