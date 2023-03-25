@@ -82,8 +82,8 @@ function Login() {
           <input type="password" className='register-login-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setUserPwd(e.target.value) }}/>
         </LoginElement>
       </LoginForm>
-      <input type="button" value='로그인하기' id='login-button' className='register-login-button' onClick={handleLoginClick} />
-      <input type="button" value='회원가입' id='register-button' className='register-login-button' onClick={handleRegisterClick}/>
+      <input type="button" value='로그인하기' id='login-button' className='common-button' onClick={handleLoginClick} />
+      <input type="button" value='회원가입' id='register-button' className='common-button' onClick={handleRegisterClick}/>
     </LoginContainer>
   )
 }

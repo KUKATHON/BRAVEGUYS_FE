@@ -15,9 +15,11 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 4px;
     border: none;
   }
-  .register-login-button {
+  .common-button {
     width: 335px;
     height: 60px;
+    border-width: none;
+    border-radius: 8px;
   }
 `;
 
