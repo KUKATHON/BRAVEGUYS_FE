@@ -58,6 +58,13 @@ const RegisterForm = styled.div`
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
+
+  #register-next-button, #register-submit-button {
+    position: absolute;
+    top: 510px;
+    background-color: #fff;
+    border-width: 1px;
+  }
 `
 
 const RegisterElement = styled.div`
@@ -86,17 +93,17 @@ function Register() {
             <div id='register-first'>
               <RegisterElement>
                 <div className='register-login-text'>아이디</div>
-                <input type="text" className='register-login-input' placeholder='asdd232@gmail.com' onChange={(e) => { setEmail(e.target.value) }}/>
+                <input type="text" className='common-input' placeholder='asdd232@gmail.com' onChange={(e) => { setEmail(e.target.value) }}/>
               </RegisterElement>
               <RegisterElement>
                 <div className='register-login-text'>비밀번호</div>
-                <input type="password" className='register-login-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setPwd(e.target.value) }}/>
+                <input type="password" className='common-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setPwd(e.target.value) }}/>
               </RegisterElement>
               <RegisterElement>
                 <div className='register-login-text'>비밀번호 확인</div>
-                <input type="password" className='register-login-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setPwdConfirm(e.target.value) }}/>
+                <input type="password" className='common-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setPwdConfirm(e.target.value) }}/>
               </RegisterElement>
-              <button onClick={handleClick} className='register-login-button' >다음으로</button>
+              <button onClick={handleClick} id='register-next-button' className='common-button' >다음으로</button>
             </div>
           }
           { nextClick &&
@@ -105,7 +112,7 @@ function Register() {
                 <div className='register-login-text'>닉네임</div>
                 <input type="text" className='register-login-input' placeholder='닉네임을 입력해주세요' onChange={(e) => { setNickname(e.target.value) }}/>
               </RegisterElement>
-              <input type='submit' value='가입하기' className='register-login-button' />
+              <input type='submit' value='가입하기' id='register-submit-button' className='common-button' />
             </div>
           }
         </RegisterForm>

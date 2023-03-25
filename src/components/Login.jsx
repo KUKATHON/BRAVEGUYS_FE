@@ -13,7 +13,6 @@ const LoginContainer = styled.div`
     top: 44px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: Pretendard;
     font-weight: 500;
     font-size: 24px;
   }
@@ -74,16 +73,16 @@ function Login() {
       <div id='login-title-text'>세이브어스</div>
       <LoginForm>
         <LoginElement>
-          <div className='register-login-text'>아이디</div>
-          <input type="text" className='register-login-input' placeholder='asdd232@gmail.com' onChange={(e) => { setUserId(e.target.value) }}/>
+          <div>아이디</div>
+          <input type="text" className='common-input' placeholder='asdd232@gmail.com' onChange={(e) => { setUserId(e.target.value) }}/>
         </LoginElement>
         <LoginElement>
-          <div className='register-login-text'>비밀번호</div>
-          <input type="password" className='register-login-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setUserPwd(e.target.value) }}/>
+          <div>비밀번호</div>
+          <input type="password" className='common-input' placeholder='비밀번호를 입력해주세요' onChange={(e) => { setUserPwd(e.target.value) }}/>
         </LoginElement>
       </LoginForm>
-      <input type="button" value='로그인하기' id='login-button' className='register-login-button' onClick={handleLoginClick} />
-      <input type="button" value='회원가입' id='register-button' className='register-login-button' onClick={handleRegisterClick}/>
+      <input type="button" value='로그인하기' id='login-button' className='common-button' onClick={handleLoginClick} />
+      <input type="button" value='회원가입' id='register-button' className='common-button' onClick={handleRegisterClick}/>
     </LoginContainer>
   )
 }

@@ -4,6 +4,7 @@ import GlobalStyle from './global/GlobalStyle';
 import GlobalFonts from './fonts/fonts';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import ProloguePage from './pages/ProloguePage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/register" element={<RegisterPage />}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="/prologue" element={<ProloguePage />}></Route>
         </Routes>
       </div>
  )

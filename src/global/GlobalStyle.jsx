@@ -8,16 +8,18 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: Pretendard;
   }
-  .register-login-input {
+  .common-input {
     width: 335px;
     height: 48px;
     background: #f4f5f6;
     border-radius: 4px;
     border: none;
   }
-  .register-login-button {
+  .common-button {
     width: 335px;
     height: 60px;
+    border-width: none;
+    border-radius: 8px;
   }
 `;
 
