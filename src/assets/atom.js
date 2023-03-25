@@ -34,3 +34,8 @@ export const topBar = atom({
   key: 'topBar',
   default: '#fff',
 })
+
+export const missionScore = atom({
+  key: 'missionScore',
+  default: 0
+})
