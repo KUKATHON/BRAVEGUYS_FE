@@ -91,6 +91,46 @@ const MainContainer = styled.div`
       }
     }
   }
+
+  #guide-message {
+    width: 154px;
+    height: 36px;
+    border-radius: 16px;
+    background-color: #fff;
+    position: absolute;
+    top: 273px;
+    left: 110px;
+    font-size: 14px;
+    color: #4c7fe6;
+    z-index: 2;
+    text-align: center;
+    line-height: 36px;
+  }
+
+  #polarBear-info {
+    width: 101px;
+    height: 31px;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+    top: 645px;
+    left: 137px;
+    display: flex;
+    justify-content: center;
+    line-height: 31px;
+
+    #polarBear-name {
+      color: #4c7fe6;
+      font-size: 16px;
+      margin-right: 8px;
+      font-weight: 600;
+    }
+
+    #polarBear-level {
+      color: #aaabb5;
+      font-size: 14px;
+    }
+  }
 `
 
 function Main() {
@@ -113,7 +153,12 @@ function Main() {
         </div>
       </div>
       <div id="low-level-background"></div>
+      <div id="guide-message">얼음이 너무 작아요 😭</div>
       <img id='low-level-character' src={lowLevelCh} alt="low-level-character" />
+      <div id="polarBear-info">
+        <div id="polarBear-name">고미</div>
+        <div id="polarBear-level">1레벨</div>
+      </div>
     </MainContainer>
   )
 }
