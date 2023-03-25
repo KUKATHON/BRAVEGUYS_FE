@@ -70,7 +70,7 @@ function Login() {
   
   return(
     <LoginContainer>
-      <div id='login-title-text'>세이브어스</div>
+      <div id='login-title-text'>세이버스</div>
       <LoginForm>
         <LoginElement>
           <div>아이디</div>

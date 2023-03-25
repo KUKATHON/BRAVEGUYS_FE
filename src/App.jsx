@@ -10,6 +10,7 @@ import ProloguePage from './pages/ProloguePage';
 import MainPage from './pages/MainPage';
 import CommunityPage from './pages/CommunityPage';
 import UploadPage from './pages/UploadPage';
+import SplashPage from './pages/SplashPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <GlobalStyle />
         <GlobalFonts />
         <Routes>
+          <Route path="/" element={<SplashPage />}></Route>
           <Route path="/register" element={<RegisterPage />}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
           <Route path="/prologue" element={<ProloguePage />}></Route>
