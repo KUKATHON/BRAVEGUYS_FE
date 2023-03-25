@@ -8,15 +8,24 @@ function Titletoggle() {
   const navbar = ["커뮤니티", "나의 인증"]
   const Toggle = styled.div`
   #toggle-wrapper{
-      padding-top: 40px;
+      width: 156px;
+      margin: 0 auto;
+      margin-top: 40px;
+      padding: 4px;
       display: flex;
       justify-content: center;
+      background-color: var(--gray-50);
+      border-radius: 8px;
+      margin-bottom: 8px;
   }
 
   #toggle-button{
+      height: 40px;
+      font-size: 16px;
       background: none;
       border: none;
       padding: 10px;
+      border-radius: 8px;
   }
 `
 
@@ -27,7 +36,7 @@ function Titletoggle() {
             {navbar.map((item, idx)=>(
                 <button id="toggle-button" key={idx}
                 onClick={()=>{setNavbarContent(item)}}
-                style={item===navbarContent?{"color": "white", "backgroundColor": "black"}:{"color":"black", "background-color":"grey"}}>{item}</button>
+                style={item===navbarContent?{"color": "white", "backgroundColor": "var(--blue-400)"}:{"color":"var(--gray-300)"}}>{item}</button>
             ))}
         </div>
     </Toggle>

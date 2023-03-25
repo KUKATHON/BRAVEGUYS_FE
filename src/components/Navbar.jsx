@@ -7,9 +7,11 @@ function Navbar() {
     const NavbarItem = styled.div`
     #navbar-wrapper{
         padding-bottom: 10px;
+        padding: 0 20px;
     }
 
     #navbar-title{
+        font-size: 20px;
         display: flex;
         justify-content: space-between; 
     }
@@ -21,7 +23,7 @@ function Navbar() {
         <div id="navbar-wrapper">
             <div id="navbar-title">
                 <div>{navbarContent}</div>
-                <div>⚙️</div>
+                <div>🦹‍♀️</div>
             </div>
         </div>
     </NavbarItem>
