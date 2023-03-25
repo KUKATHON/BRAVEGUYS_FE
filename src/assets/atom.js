@@ -29,3 +29,8 @@ export const menuState = atom({
   key: 'selectedMenu',
   default: "북극곰",
 })
+
+export const topBar = atom({
+  key: 'topBar',
+  default: '#fff',
+})
