@@ -63,7 +63,6 @@ function Post() {
    ])
    const [selectedCategory, setSelectedCategory] = useRecoilState(categoryState)
    const category = ["용기내챌린지", "플로깅", "비건라이프", "분리배출", "친환경물품"]
-
   
   return (
     <div>

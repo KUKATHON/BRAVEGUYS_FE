@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Titletoggle from './Titletoggle'
 import styled from 'styled-components';
+import { categoryState } from '../assets/atom';
+
 function Mypost() {
   const [myPost, setMyPost] = useState([
     {title:"제목1", user:"사용자1", contents:"1 내용입니다.", category: "용기내챌린지", imgUrl:"url_here"},
@@ -12,8 +14,9 @@ function Mypost() {
   ])
   const [selectedPostFilter, setSelectedPostFilter] = useState("최신순");
   const [unselectedPostFilter, setUnselectedPostFilter] = useState("카테고리순")
+  const [selectedCategory, setSelectedCategory] = useState("용기내챌린지")
   const postFilter = ["최신순", "카테고리순"]
-
+  const category = ["용기내챌린지", "플로깅", "비건라이프", "분리배출", "친환경물품"]
 
   useEffect(() => {
     setUnselectedPostFilter(postFilter.filter((item)=>item!=selectedPostFilter))
@@ -51,6 +54,7 @@ function Mypost() {
     <div>
         <MypostItem>
         <div id="mypost-wrapper">
+            
             <div id="mypost-info">
                 <div>오늘의 인증횟수 {myPost.length}회</div>
                 <div onClick={()=>showDropDown()}>
@@ -58,19 +62,26 @@ function Mypost() {
                     <div onClick={()=>hideDropDown()}> {unselectedPostFilter}</div>
                 </div>
             </div>
-            {}
             <div id="mypost-img">
-                {(selectedPostFilter==="커뮤니티")?
+                {(selectedPostFilter=="최신순")?
                 myPost.map((item, idx)=>(
                     <div key={idx} id="imgitem">
                         <img src={item.imgUrl}/>
                     </div>
                 )):
-                myPost.map((item, idx)=>(
+                <>
+                <div id="navbar-category">
+                {category.map((item, idx)=>(
+                    <button key={idx} onClick={()=>setSelectedCategory(item)} style={selectedCategory===item?{"color":"blue", "borderBottom":"1px solid black"}:{color:"black"}}>{item}</button>
+                ))}
+                </div>
+                {myPost.map((item, idx)=>(
+                    item.category===selectedCategory?
                     <div key={idx} id="imgitem">
                         <img src={item.imgUrl}/>
-                    </div>
-                ))
+                    </div>:""
+                ))}
+                </>
                 }
             </div>
         </div>
